@@ -1,10 +1,11 @@
-前言：你可能会遇到一些神秘的tag
-python function:说明python有自带的函数可以快速解决这个问题
-pypy:说明这个题用pypy可以显著减小运行时间。
-attention:说明这个题需要注意力。
+前言：你可能会遇到一些神秘的tag  
+python function:说明python有自带的函数可以快速解决这个问题  
+pypy:说明这个题用pypy可以显著减小运行时间。  
+attention:说明这个题需要注意力。  
 ## E01003:Hangover 
-http://cs101.openjudge.cn/pctbook/E01003/
+http://cs101.openjudge.cn/pctbook/E01003/  
 tags:implementation
+
 预先打表处理，查询就比较方便（虽然理应用bisect）
 ```python
 lengths = [0]#打表记录
@@ -27,6 +28,7 @@ while 1:
 
 ## E01218:THE DRUNK JAILER
 tags:math
+
 我们知道在第 $m$ 轮时，只有 $m$ 的倍数的编号对应的牢房会改变门的开关状态。如果最后牢房的门是开的，说明门被开关了奇数次，也就说明这个数有奇数个不同的因数，只有完全平方数能做到这一点。
 ```python
 for _ in range(int(input())):
@@ -34,8 +36,9 @@ for _ in range(int(input())):
 ```
 
 ## E02676:整数的个数
-http://cs101.openjudge.cn/pctbook/E02676/
+http://cs101.openjudge.cn/pctbook/E02676/  
 tags:python function
+
 Counter练习题
 ```python
 from collections import Counter
@@ -45,8 +48,9 @@ print(dic[1],dic[5],dic[10],sep = "\n")
 ```
 
 ## E02689:大小写字母互换
-http://cs101.openjudge.cn/pctbook/E02689/
+http://cs101.openjudge.cn/pctbook/E02689/  
 tags: python function
+
 swapcase(),lower(),upper()练习题
 ```python
 print(input().swapcase())
@@ -54,6 +58,7 @@ print(input().swapcase())
 
 ## E02701:与7无关的数
 http://cs101.openjudge.cn/pctbook/E02701/
+
 tags:打表，implementation
 ```python
 index = int(input())
@@ -61,8 +66,9 @@ print([1, 5, 14, 30, 55, 91, 91, 155, 236, 336, 457, 601, 770, 770, 995, 1251, 1
 ```
 
 ## E02712:细菌繁殖
-http://cs101.openjudge.cn/pctbook/E02712/
+http://cs101.openjudge.cn/pctbook/E02712/  
 tags:implementation
+
 此题重点在计算时间上
 ```python
 n = int(input())
@@ -82,8 +88,9 @@ for i in range(n):
 ```
 
 ## E02724:生日相同
-http://cs101.openjudge.cn/pctbook/E02724/
+http://cs101.openjudge.cn/pctbook/E02724/  
 tags:implementation
+
 ```python
 dic = {}
 for _ in range(int(input())):
@@ -100,8 +107,9 @@ for m in range(1,13):
                 print(m,w,*dic[100*m+w])
 ```
 ## E02733:判断闰年
-http://cs101.openjudge.cn/pctbook/E02733/
+http://cs101.openjudge.cn/pctbook/E02733/  
 tags:implementation
+
 忽略题目中 $a<3000$ 的条件，使用4重if判断
 ```python
 a = int(input())
@@ -121,8 +129,9 @@ else:
 ```
 
 ## E02734:十进制到八进制
-http://cs101.openjudge.cn/pctbook/E02734/
+http://cs101.openjudge.cn/pctbook/E02734/  
 tags:implementation,python function
+
 正常做法：
 ```python
 a=int(input())
