@@ -148,6 +148,175 @@ oct()函数练习题
 print(oct(int(input()))[2:])
 ```
 
+## E02750:鸡兔同笼
+http://cs101.openjudge.cn/pctbook/E02750/  
+tags:math
+
+如果给定的数是奇数，则不可能；如果是偶数，输出 (ceil(a//4),a//2) 。
+```python
+a=int(input())
+if a%2==0:
+    print(-((-a)//4),a//2)
+else:
+    print(0,0)
+```
+
+## E02753:菲波那契数列
+http://cs101.openjudge.cn/pctbook/E02753/  
+tags:dp，打表  
+
+最短代码，不服来战。
+```python
+arr = [1,1]
+for i in range(20):
+	arr.append(arr[-1]+arr[-2]) # 递推式a_n= a_{n-1}+a_{n-2}
+for _ in range(int(input())):
+	print(arr[int(input())-1])
+```
+
+## E02767:简单密码
+http://cs101.openjudge.cn/pctbook/E02767/  
+tags:implementation,python function
+
+translate()练习题
+```python
+cypher = input()
+alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+rolled_alphabet = alphabet[-5:] + alphabet[:-5]
+decripted = cypher.translate(
+    str.maketrans(alphabet, rolled_alphabet)
+)
+print(decripted)
+```
+
+## E02792:集合加法
+http://cs101.openjudge.cn/pctbook/E02792/  
+tags:brute force,dict,python function,pypy
+
+利用字典里查找为 O(1) 的特性，极大压缩时间。
+```python
+from collections import Counter
+for _ in range(int(input())):
+    s = int(input())
+    a = int(input())
+    alist = list(map(int,input().split()))
+    b = int(input())
+    blist = list(map(int,input().split()))
+    dic = Counter(alist) # 利用Counter构建字典
+    num = 0
+    for m in blist:
+        if s-m in dic:
+            num += dic[s-m]
+    print(num)
+```
+
+小技巧：  
+ 1. python自带的函数永远比手动实现快。
+ 2. 在多重循环且执行的语句**具有明显重复性**时，pypy会非常快。
+```python
+# python 5390ms AC
+# pypy 8981ms TLE
+for _ in range(int(input())):
+    s = int(input())
+    input()
+    alist = list(map(int,input().split()))
+	input()
+    blist = list(map(int,input().split()))
+    num = 0
+    for m in blist:
+        num += alist.count(s-m) # 使用列表的count函数，不具有重复性
+    print(num)
+```
+
+```python
+# python 29940ms TLE
+# pypy 1416ms AC
+for _ in range(int(input())):
+    s = int(input())
+    a = int(input())
+    alist = list(map(int,input().split()))
+    b = int(input())
+    blist = list(map(int,input().split()))
+    num = 0
+    for m in blist:
+        for n in alist:
+            num += m+n==s # 手动实现，具有重复性
+    print(num)
+```
+
+## E02804:词典
+http://cs101.openjudge.cn/pctbook/E02804/  
+tags:implementation,dict
+
+```python
+dic = {}
+while True:
+    stri = input()
+    if stri == "":
+        break
+    else:
+        string = stri.split()
+        if string[1] in dic:
+            continue
+        else:
+            dic[string[1]] = string[0]
+try:
+    while True:
+        need = input()
+        if need in dic:
+            print(dic[need])
+        else:
+            print("eh")
+except EOFError:
+    pass
+```
+
+## E02808:校门外的树
+http://cs101.openjudge.cn/pctbook/E02808/  
+tags:implementation
+
+用一个列表模拟砍树过程。
+```python
+l,n = map(int,input().split())
+trees = [1]*(l+1)
+for i in range(n):
+    s,e = map(int,input().split())
+    for j in range(s,e+1):
+        trees[j] = 0
+print(sum(trees))
+```
+
+## E02883:Checking order
+http://cs101.openjudge.cn/pctbook/E02883/  
+tags:python function
+
+sorted()函数练习题
+```python
+import sys
+for nums in sys.stdin.read().splitlines():
+    numed = list(map(int,nums.split()))
+    if sorted(numed) == numed:
+        print("Yes")
+    else:
+        print("No",*sorted(numed))
+```
+
+## E02899:矩阵交换行
+http://cs101.openjudge.cn/pctbook/E02899/  
+
+```python
+matrix = []
+for _ in range(5):
+    matrix.append(list(map(int,input().split())))
+n, m = map(int, input().split())
+if n < 0 or n >= 5 or m < 0 or m >= 5:
+    print("error")
+else:
+    matrix[n],matrix[m] = matrix[m],matrix[n] # 交换元素
+    for i in matrix:
+        print("".join([f"{num:4d}" for num in i]))
+```
+
 ## E23556:小青蛙跳荷叶
 http://cs101.openjudge.cn/pctbook/E23556/  
 tags:dp
@@ -392,7 +561,7 @@ for _ in range(n):
     for d in data:
         d1,d2 = map(int,d.split(":"))
         dic[d1] = d2
-    prices.append(dic)
+    prices.append(dic) # 记录每个商店
 for _ in range(m):
     dic = {}
     data = input().split()
