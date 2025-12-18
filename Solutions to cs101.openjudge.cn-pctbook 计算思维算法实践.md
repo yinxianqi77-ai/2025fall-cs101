@@ -149,7 +149,7 @@ print(oct(int(input()))[2:])
 ```
 
 ## E23556:小青蛙跳荷叶
-http://cs101.openjudge.cn/pctbook/E23556/
+http://cs101.openjudge.cn/pctbook/E23556/  
 tags:dp
 ```python
 jumps = int(input())
@@ -163,7 +163,7 @@ else:
 ```
 
 ## M01002:方便记忆的电话号码
-http://cs101.openjudge.cn/pctbook/M01002/
+http://cs101.openjudge.cn/pctbook/M01002/  
 tags:implementation
 ```python
 teledic = {}
@@ -188,12 +188,13 @@ if a == 0:
 ```
 
 ## M01017:装箱问题
-http://cs101.openjudge.cn/pctbook/M01017/
+http://cs101.openjudge.cn/pctbook/M01017/  
 tags:math,greedy
 
 ## M02746:约瑟夫问题
-http://cs101.openjudge.cn/pctbook/M02746/
+http://cs101.openjudge.cn/pctbook/M02746/  
 tags:math,implementation
+
 如下的代码应该很直观了。
 ```python
 while True:
@@ -209,12 +210,12 @@ while True:
             del monkeys[counts]
         print(monkeys[0] + 1)
 ```
-**思考题**：
+**思考题**：  
 (1) 当 $0<m,n\leq 10^6$ 时，如何解决这个问题？
 (2) 当 $0<m\leq 1000,0<n\leq 10^{12}$ 时，如何解决这个问题？
 
 ## M02810:完美立方
-http://cs101.openjudge.cn/pctbook/M02810/
+http://cs101.openjudge.cn/pctbook/M02810/  
 这是一个 $O(n^2)$ 算法。
 
 ```python
