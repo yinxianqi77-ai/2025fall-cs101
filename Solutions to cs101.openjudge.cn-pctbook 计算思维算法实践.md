@@ -211,7 +211,7 @@ while True:
 ```
 **思考题**：
 (1) 当 $0<m,n\leq 10^6$ 时，如何解决这个问题？
-(2) 当 $0<m\leq 1000$ ，$0<n\leq 10^{12}$ 时，如何解决这个问题？
+(2) 当 $0<m\leq 1000,0<n\leq 10^{12}$ 时，如何解决这个问题？
 
 ## M02810:完美立方
 http://cs101.openjudge.cn/pctbook/M02810/
@@ -284,14 +284,15 @@ print(max(size.values()))
 ```
 
 ## T01011:Sticks
-http://cs101.openjudge.cn/pctbook/T01011/
+http://cs101.openjudge.cn/pctbook/T01011/  
 tags:dfs,剪枝
+
 超级剪枝题目
 ```python
 import sys
 sys.setrecursionlimit(10**7)
 input = sys.stdin.readline
-def judge(arr, k):
+def judge(arr,k):
     n = len(arr)
     s = sum(arr)
     target = s // k
@@ -374,8 +375,9 @@ while left:
 
 
 ## T25561:2022决战双十一
-http://cs101.openjudge.cn/pctbook/T25561/
+http://cs101.openjudge.cn/pctbook/T25561/  
 tags:brute force,dfs
+
 dfs题目
 ```python
 import sys
@@ -419,8 +421,9 @@ print(dfs(0))
 ```
 
 ## T25573:红蓝玫瑰
-http://cs101.openjudge.cn/pctbook/T25573/
+http://cs101.openjudge.cn/pctbook/T25573/  
 tags:dp,greedy
+
 核心思想：从右到左遍历，如果遇到一朵蓝色花就直接改变颜色；如果有多朵连续的蓝色花就翻转一次颜色把他们都变成红色。
 ```python
 r = input()
@@ -444,7 +447,7 @@ print(ans)
 ```
 
 ## T26971:分发糖果
-http://cs101.openjudge.cn/pctbook/T26971/
+http://cs101.openjudge.cn/pctbook/T26971/  
 tags:greedy
 ```python
 n = int(input())
@@ -469,9 +472,10 @@ print(sum(cand))
 ```
 
 ## T27103:最短的愉悦旋律长度
-http://cs101.openjudge.cn/pctbook/T27103/
+http://cs101.openjudge.cn/pctbook/T27103/  
 tags:math,dp
-如果这个题你的代码长度超过了300B，那就比较失败了。
+
+如果这个题你的代码长度超过了300B，那就比较失败了。  
 思路：如果长度为 $n-1$ 的所有旋律已经在前面的数全部出现过，那么后面的数能够让长度为 $n$ 的所有旋律均出现的充要条件就是后面的数必须出现所有不同的音符。所以我们只要用一个set记录所有出现过的音符即可。
 ```python
 a=lambda:map(int,input().split())
@@ -493,8 +497,9 @@ tags:greedy
 依旧是区间覆盖题目
 
 ## T29947:校门外的树又来了
-http://cs101.openjudge.cn/pctbook/T29947/
+http://cs101.openjudge.cn/pctbook/T29947/  
 tags:interval merging
+
 排序是这个方法的点睛之笔。
 ```python
 l,m=map(int,input().split())
