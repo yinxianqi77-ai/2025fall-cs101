@@ -1186,12 +1186,24 @@ else:
 http://cs101.openjudge.cn/pctbook/E25580/   
 tags:implementation
 
-假设至少需要挡住的最小速度为 $v$ ，那么当木板恰好能挡住时，有   
-$$0.5gt^2=H-h$$   
-和   
-$$vt=L$$   
-联立解得       
-$$h=H-0.5g\left( \frac{L}{v} \right)^{2}$$   
+假设至少需要挡住的最小速度为 $v$ ，那么当木板恰好能挡住时，有
+
+$$
+0.5gt^2=H-h
+$$  
+
+和
+
+$$
+vt=L
+$$ 
+
+联立解得 
+
+$$
+h=H-0.5g\left( \frac{L}{v} \right)^{2}
+$$   
+
 ```python
 a = lambda:map(int,input().split())
 h,l,n = a()
@@ -1215,8 +1227,12 @@ for i in range(int(input())):
     print(ans)
 ```
 
-更加数学一点的方式：利用   
-$$\sum_{i=0}^n 2^i=2^{n+1}-1$$
+更加数学一点的方式：利用
+
+$$
+\sum_{i=0}^n 2^i=2^{n+1}-1
+$$
+
 ```python
 from math import log2
 for _ in range(int(input())):
