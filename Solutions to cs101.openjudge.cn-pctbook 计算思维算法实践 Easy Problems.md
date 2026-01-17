@@ -1377,7 +1377,7 @@ print(int(a[0][:2])+int(a[1][:2]))
 http://cs101.openjudge.cn/pctbook/E29895/   
 tags:math,implementation
 
-试出最小的因数，用自己去除就行了。
+试出最小的因数，用自己去除就可得到最大的因数。
 ```python
 n = int(input())
 for i in range(2,10**5):
@@ -1390,7 +1390,7 @@ for i in range(2,10**5):
 http://cs101.openjudge.cn/pctbook/E29940/   
 tags:greedy
 
-假设机器猫0滴血出门，如果扣到负数血量，那么答案就是用它的最低血量的相反数加上1。
+假设机器猫0滴血出门，令经历全过程后的最低血量为 $m$ ，如果 $m<0$ ，那么答案就是 $-m+1$；否则答案是1。
 ```python
 n = int(input())
 s = 0
